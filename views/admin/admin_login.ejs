@@ -1,0 +1,67 @@
+<%- include('header') %>
+
+<% if (typeof message != 'undefined') { %>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 m-auto">
+                <div
+        class="alert alert-primary alert-dismissible fade show"
+        role="alert"
+    >
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+        ></button>
+    
+        <strong><%= message %></strong> 
+    </div>
+
+            </div>
+        </div>
+    </div>
+    
+    
+<% } %>
+
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 m-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Admin Login<a href="/" class="btn btn-dark btn-sm float-end">Back</a></h5>
+                </div>
+                <div class="card-body">
+                    <form action="/adminlogin" method="post">
+
+
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email"/>
+                        </div>
+
+
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password"/>
+                        </div>
+
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-primary w-100 rounded-pill">Login</button>
+                        </div>
+
+                        <p class="text-center mt-2">if you have not a account please <a href="/register">create!</a> </p>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<%- include('footer') %>

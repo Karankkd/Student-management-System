@@ -1,0 +1,62 @@
+<%- include('header') %>
+
+
+<a href="/admin_logout" class="btn btn-danger">Logout</a>
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-10 m-auto">
+            <div class="card">
+                <div class="card-header bg-warning">
+                    <h5>All User's</h5>
+                </div>
+                <div class="card-body">
+                    <div
+                        class="table-responsive"
+                    >
+                        <table
+                            class="table table-bordered table-hover"
+                        >
+                            <thead>
+                                <tr>
+                                    <th scope="col">Sr no.</th>
+                                    <th scope="col">image</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Phone</th>
+                                    <th scope="col">EDIT</th>
+                                    <th scope="col">DELETE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <% let i = 0 %>
+
+                                <% data.forEach(item => { i++ %>
+                                    <tr class="">
+                                        <td><%= i %></td>
+                                        <td scope="row"><img src="./image/<%= item.image %>" alt="" width="50px"></td>
+                                        <td><%= item.name %></td>
+                                        <td><%= item.email %></td>
+                                        <td><%= item.phone %></td>
+                                        <td><a href="/admin_edit?id=<%= item._id %>" class="btn btn-sm btn-warning">edit</a></td>
+                                        <td><a href="/delete?id=<%= item._id %>" class="btn btn-sm btn-danger">delete</a></td>
+                                    </tr>
+                                <% }) %>
+
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<%- include('footer') %>

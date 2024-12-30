@@ -1,0 +1,71 @@
+<%- include('header') %>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 m-auto">
+            <% if (typeof message != 'undefined') { %>
+                <div
+                    class="alert alert-primary"
+                    role="alert"
+                >
+                    <strong><%= message %></strong> 
+                </div>
+                
+             
+            <% } %>
+
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 m-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Register User <a href="/" class="btn btn-dark btn-sm float-end">Back</a></h5>
+                </div>
+                <div class="card-body">
+                    <form action="/registers" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name"/>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email"/>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="phone" name="phone"/>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password"/>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Upload profile image</label>
+                            <input type="file" class="form-control" id="image" name="image"/>
+                        </div>
+
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-primary w-100 rounded-pill">Register</button>
+                        </div>
+
+                        <p class="text-center mt-2">if you have already have a account please <a href="/login">Login!</a> </p>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<%- include('footer') %>
